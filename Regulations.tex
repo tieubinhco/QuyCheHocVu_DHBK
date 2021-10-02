@@ -1,23 +1,36 @@
-\documentclass[14pt,a4paper,oneside]{book}
-\usepackage{geometry}
-\geometry{
-	a4paper,
-	total={170mm,247mm},
-	left=20mm,
-	right=20mm,
-	top=25mm,
-	bottom=25mm,
-	headheight=12.5mm
+\documentclass[12pt,a4paper]{isov2}
+
+
+\renewcommand{\Cfont}{\sffamily\Large\bfseries}
+\renewcommand{\SCfont}{\sffamily\large\bfseries}
+\renewcommand{\SSCfont}{\sffamily\normalsize\bfseries}
+
+
+% Add a period (.) after the clause numbering (in the actual document, NOT toc)
+\makeatletter
+\def\@seccntformat#1{%
+	\csname the#1\endcsname\csname dot#1\endcsname\quad
 }
-\usepackage{indentfirst}
-\usepackage{multirow}
-\title{REGULATIONS ON TRAINING AND LEARNING AT UNIVERSITIES AND COLLEGES}
-\author{Ho Chi Minh City University of Technology}
+\newcommand{\dotclause}{.}
+\makeatother
+
+\standard{ISO/IEEE 11073-10201}
+\yearofedition{2013}
+\languageofedition{(E)}
+\setcounter{tocdepth}{3}     % ToC includes ssclauses and above
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
-\maketitle
-\input{Chapter_1}
-\input{Chapter_2}
-\input{Chapter_3}
-\input{Chapter_4}
-\input{Chapter_5}
+	
+	\title{Title of Document}{}{}
+	\tableofcontents
+
+	\input{Chapter_1}
+	\input{Chapter_2}
+	\input{Chapter_3}
+	\input{Chapter_4}
+	\input{Chapter_5}
+						
+
 \end{document}
